@@ -10,7 +10,7 @@ const Homepage = ({ sideNavbar, search }) => {
   //fetch the data from video on component mount
   useEffect(() => {
     axios
-      .get("https://youtube-backend-g3su.onrender.com/video/allVideo")
+      .get("https://youtube-backend-x0qv.onrender.com/video/allVideo")
       .then((res) => {
         console.log(res.data);
         setData(res.data.videos);
