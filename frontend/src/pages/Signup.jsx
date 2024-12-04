@@ -38,7 +38,7 @@ const Signup = () => {
         }
         setProgressBar(true);
         // send post request to ceate new user
-        axios.post(`https://youtube-backend-x0qv.onrender.com/auth/signup`, signUpField, {withCredentials: true})
+        axios.post(`https://youtube-backend-v8j5.onrender.com/auth/signup`, signUpField, {withCredentials: true})
         .then((res) => {
             toast.success("Registered Successfully")
             setProgressBar(false)

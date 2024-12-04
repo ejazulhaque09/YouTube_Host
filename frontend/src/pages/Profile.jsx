@@ -14,7 +14,7 @@ const Profile = ({ sideNavBar }) => {
   //function to fetch the profile data
   const fetchProfileData = async () => {
     axios
-      .get(`https://youtube-backend-x0qv.onrender.com/video/${id}/channel`)
+      .get(`https://youtube-backend-v8j5.onrender.com/video/${id}/channel`)
       .then((res) => {
         console.log(res);
         setData(res.data.data);
@@ -43,7 +43,7 @@ const Profile = ({ sideNavBar }) => {
       return;
     }
     try {
-      await axios.delete(`https://youtube-backend-x0qv.onrender.com/video/video/${videoId}`, {
+      await axios.delete(`https://youtube-backend-v8j5.onrender.com/video/video/${videoId}`, {
         withCredentials: true,
       });
       toast.info("Video Deleted successfully");

@@ -65,7 +65,7 @@ const VideoUpload = () => {
   useEffect(() => {
     if (videoId) {
       axios
-        .get(`https://youtube-backend-x0qv.onrender.com/video/getVideoById/${videoId}`)
+        .get(`https://youtube-backend-v8j5.onrender.com/video/getVideoById/${videoId}`)
         .then((res) => {
           console.log(res.data.data)
           const video = res.data.data;
@@ -89,7 +89,7 @@ const VideoUpload = () => {
     if (type === "update") {
       try {
         await axios
-          .put(`https://youtube-backend-x0qv.onrender.com/video/video/${videoId}`, inputField, {
+          .put(`https://youtube-backend-v8j5.onrender.com/video/video/${videoId}`, inputField, {
             withCredentials: true,
           })
           .then((res) => {
@@ -111,7 +111,7 @@ const VideoUpload = () => {
     }
     else{
         try {
-            await axios.post(`https://youtube-backend-x0qv.onrender.com/video/uploadVideo`, inputField, {withCredentials: true})
+            await axios.post(`https://youtube-backend-v8j5.onrender.com/video/uploadVideo`, inputField, {withCredentials: true})
             .then((res) =>{
                 setLoader(false)
                 toast.success("Video Uploaded Successfully")

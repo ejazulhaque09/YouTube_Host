@@ -56,7 +56,7 @@ const Navbar = ({ setSideNavbarFunc, sideNavbar, setSearch }) => {
   // handle logout 
   const getLogoutFunc = async () => {
     axios
-      .post("https://youtube-backend-x0qv.onrender.com/auth/logout", {}, { withCredentials: true })
+      .post("https://youtube-backend-v8j5.onrender.com/auth/logout", {}, { withCredentials: true })
       .then((res) => {
         console.log("Logged Out");
       })

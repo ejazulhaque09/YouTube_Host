@@ -21,7 +21,7 @@ const Video = () => {
 
   const fetchVideoById = async () => {
     await axios
-      .get(`https://youtube-backend-x0qv.onrender.com/video/getVideoById/${id}`)
+      .get(`https://youtube-backend-v8j5.onrender.com/video/getVideoById/${id}`)
       .then((res) => {
         setData(res.data.data); // set video data
         console.log(data)
@@ -35,7 +35,7 @@ const Video = () => {
   //handle like
   const handleLike = async () => {
     try {
-      await axios.post(`https://youtube-backend-x0qv.onrender.com/video/video/${id}/like`,{},{withCredentials: true})
+      await axios.post(`https://youtube-backend-v8j5.onrender.com/video/video/${id}/like`,{},{withCredentials: true})
     } catch (error) {
       toast.error("Unable to like")
     }
@@ -43,7 +43,7 @@ const Video = () => {
   // handle dislike
   const handleDislike = async () => {
     try {
-      await axios.post(`https://youtube-backend-x0qv.onrender.com/video/video/${id}/dislike`,{},{withCredentials: true})
+      await axios.post(`https://youtube-backend-v8j5.onrender.com/video/video/${id}/dislike`,{},{withCredentials: true})
       
     } catch (error) {
       toast.error("Unable to like")
@@ -53,7 +53,7 @@ const Video = () => {
     // fetch reaction count
   const handleReaction = async ()=> {
     try {
-      await axios.get(`https://youtube-backend-x0qv.onrender.com/video/video/${id}/reactions`)
+      await axios.get(`https://youtube-backend-v8j5.onrender.com/video/video/${id}/reactions`)
       .then((res) => {
         console.log(res.data.likes)
         console.log(res.data.dislikes)
@@ -67,7 +67,7 @@ const Video = () => {
 
   const getCommentByVideoId = async () => {
     await axios
-      .get(`https://youtube-backend-x0qv.onrender.com/comment/comment/${id}`)
+      .get(`https://youtube-backend-v8j5.onrender.com/comment/comment/${id}`)
       .then((res) => {
         setComments(res.data.comment);
       })
@@ -81,7 +81,7 @@ const Video = () => {
       video: id,
     };
     await axios
-      .post(`https://youtube-backend-x0qv.onrender.com/comment/addComment`, body, {
+      .post(`https://youtube-backend-v8j5.onrender.com/comment/addComment`, body, {
         withCredentials: true,
       })
       .then((res) => {
@@ -98,7 +98,7 @@ const Video = () => {
   const handleEditComment = async () => {
     try {
       const res = await axios.put(
-        `https://youtube-backend-x0qv.onrender.com/comment/comment/${editCommentId}`,
+        `https://youtube-backend-v8j5.onrender.com/comment/comment/${editCommentId}`,
         { message: editMessage }
       );
       setComments(
@@ -118,7 +118,7 @@ const Video = () => {
     // handle delete comment
   const handleDeleteComment = async (commentId) => {
     try {
-      await axios.delete(`https://youtube-backend-x0qv.onrender.com/comment/comment/${commentId}`);
+      await axios.delete(`https://youtube-backend-v8j5.onrender.com/comment/comment/${commentId}`);
       setComments(comments.filter((comment) => comment._id !== commentId));
     } catch (error) {
       toast.error("Unable to delete comment");
